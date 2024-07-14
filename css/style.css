@@ -765,6 +765,9 @@ body {
 }
 
 @media (max-width: 768px) {
+  .d-inline{
+    font-size: 12px;
+  }
   .footer_section {
     margin-top: 20px; /* Adjust margin for smaller screens */
     padding: 15px 0; /* Adjust padding for smaller screens */
