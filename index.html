@@ -29,6 +29,42 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const bagsContainer = document.getElementById('bags-container');
+  
+      for (let i = 1; i <= 48; i++) {
+        const colDiv = document.createElement('div');
+        colDiv.className = 'col-sm-6 col-md-4 col-lg-3';
+  
+        const boxDiv = document.createElement('div');
+        boxDiv.className = 'box';
+  
+        const aElement = document.createElement('a');
+  
+        const imgBoxDiv = document.createElement('div');
+        imgBoxDiv.className = 'img-box';
+  
+        const imgElement = document.createElement('img');
+        imgElement.src = `images/gify items/Gift item ${i}.jpg`;
+        imgElement.alt = `Bag ${i}`;
+  
+        const newDiv = document.createElement('div');
+        newDiv.className = 'new';
+  
+        const spanElement = document.createElement('span');
+        spanElement.textContent = `G${i}`;
+  
+        imgBoxDiv.appendChild(imgElement);
+        newDiv.appendChild(spanElement);
+        aElement.appendChild(imgBoxDiv);
+        aElement.appendChild(newDiv);
+        boxDiv.appendChild(aElement);
+        colDiv.appendChild(boxDiv);
+        bagsContainer.appendChild(colDiv);
+      }
+    });
+  </script>
 </head>
 
 <body>
@@ -54,10 +90,12 @@
                 Categories
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
-                <a class="dropdown-item" href="#">Category 1</a>
-                <a class="dropdown-item" href="#">Category 2</a>
-                <a class="dropdown-item" href="#">Category 3</a>
-                <a class="dropdown-item" href="#">Category 4</a>
+                <a class="dropdown-item" href="bags.html">Bags</a>
+                <a class="dropdown-item" href="gift.html">Gift</a>
+                <a class="dropdown-item" href="#">Jarmen Silver & Gold</a>
+                <a class="dropdown-item" href="#">Jute Bag</a>
+                <a class="dropdown-item" href="#">Plates</a>
+                <a class="dropdown-item" href="#">Rent</a>
               </div>
             </li>
             <li class="nav-item">
@@ -111,208 +149,7 @@
           Latest Products
         </h2>
       </div>
-      <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/p1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Ring
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    $200
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/p2.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Watch
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    $300
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/p3.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Teddy Bear
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    $110
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/p4.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Flower Bouquet
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    $45
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/p5.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Teddy Bear
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    $95
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/p6.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Flower Bouquet
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    $70
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/p7.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Watch
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    $400
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/p8.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Ring
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    $450
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
+      <div id="bags-container" class="row"></div>
       
     </div>
   </section>

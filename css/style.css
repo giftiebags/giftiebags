@@ -160,7 +160,6 @@ body {
   
 }
 
-
 .shop_section .heading_container {
   margin-bottom: 20px;
 }
@@ -168,40 +167,37 @@ body {
 .shop_section .box {
   background-color: #eeeeee;
   position: relative;
-  padding: 10px;
+  padding: 0; /* Remove padding */
   margin-top: 25px;
+  border: 1px solid rgb(41, 40, 40); /* Add border color */
+  border-radius: 10px; /* Add border radius */
 }
 
 .shop_section .box a {
   color: #000000;
+  display: block; /* Ensure the link takes full space */
 }
 
 .shop_section .box .img-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 15px 30px;
-  height: 245px;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Let the height adjust based on the image */
+  overflow: hidden; /* Ensure the image fits within the container */
+  margin: 0; /* Remove any margin */
+  background-color: white; /* Set background color to gray */
 }
 
 .shop_section .box .img-box img {
-  max-width: 100%;
-  max-height: 145px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
 }
 
 .shop_section .box .detail-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
+  padding: 10px; /* Add padding to the detail box if needed */
 }
 
 .shop_section .box .detail-box h6 span {
@@ -215,26 +211,16 @@ body {
   top: 10px;
   left: 10px;
   background-color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 100%;
   font-size: 15px;
 }
 
 .shop_section .btn-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-top: 45px;
 }
 
@@ -245,7 +231,6 @@ body {
   color: #ffffff;
   border: 1px solid #f16179;
   border-radius: 5px;
-  -webkit-transition: all .3s;
   transition: all .3s;
 }
 
@@ -253,6 +238,8 @@ body {
   background-color: transparent;
   color: #f16179;
 }
+
+
 
 .saving_section {
   padding-left: 45px;

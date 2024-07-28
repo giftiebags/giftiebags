@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="Giftiebags, Gifts for all occasions, Online gift shop, Fast delivery gifts, Affordable gifts, High-quality gifts, Buy gifts online, Best gift shop, Gifts for birthdays, Gifts for anniversaries, Unique gift items, Gift ideas, E-commerce gifts, Dindigul gift shop, Tamil Nadu gifts" />
+  <meta name="description" content="Giftiebags is your one-stop online gift shop offering a wide range of high-quality, affordable gifts for all occasions with fast delivery. Discover unique gift items for birthdays, anniversaries, and more." />
+  <meta name="author" content="Giftiebags" />
+  <!-- bootstrap core js -->
+<script src="js/bootstrap.min.js"></script>
+
+
+  <title>
+    Giftiebags
+  </title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const bagsContainer = document.getElementById('bags-container');
+  
+      for (let i = 1; i <= 48; i++) {
+        const colDiv = document.createElement('div');
+        colDiv.className = 'col-sm-6 col-md-4 col-lg-3';
+  
+        const boxDiv = document.createElement('div');
+        boxDiv.className = 'box';
+  
+        const aElement = document.createElement('a');
+  
+        const imgBoxDiv = document.createElement('div');
+        imgBoxDiv.className = 'img-box';
+  
+        const imgElement = document.createElement('img');
+        imgElement.src = `images/gify items/Gift item ${i}.jpg`;
+        imgElement.alt = `Bag ${i}`;
+  
+        const newDiv = document.createElement('div');
+        newDiv.className = 'new';
+  
+        const spanElement = document.createElement('span');
+        spanElement.innerHTML = `&#9733; G${i}`;
+  
+        imgBoxDiv.appendChild(imgElement);
+        newDiv.appendChild(spanElement);
+        aElement.appendChild(imgBoxDiv);
+        aElement.appendChild(newDiv);
+        boxDiv.appendChild(aElement);
+        colDiv.appendChild(boxDiv);
+        bagsContainer.appendChild(colDiv);
+      }
+    });
+  </script>
+  
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/giftie.png" alt="Giftiebags Logo" class="img-fluid" style="max-width: 70px;">
+          <span class="d-none d-lg-inline">Giftiebags</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
+                <a class="dropdown-item" href="bags.html">Bags</a>
+                <a class="dropdown-item" href="gift.html">Gift</a>
+                <a class="dropdown-item" href="#">Jarmen Silver & Gold</a>
+                <a class="dropdown-item" href="#">Jute Bag</a>
+                <a class="dropdown-item" href="#">Plates</a>
+                <a class="dropdown-item" href="#">Rent</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <br>
+    <!-- end header section -->
+    <!-- slider section -->
+
+    <section class="slider_section">
+      <div class="slider_container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('images/slider-img 2.jpg');"></div>
+            <div class="carousel-item" style="background-image: url('images/slider-img.jpg');"></div>
+            <div class="carousel-item" style="background-image: url('images/slider-img 3.jpg');"></div>
+          </div>
+          <!-- Add controls -->
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+
+    <!-- end slider section -->
+  </div>
+  <!-- end hero area -->
+
+  <!-- shop section -->
+   <br><br>
+
+  <section class="shop_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Gifts
+        </h2>
+      </div>
+      
+      <div id="bags-container" class="row"></div>
+
+      
+    </div>
+  </section>
+  <br><br>
+
+  <!-- end shop section -->
+
+ 
+   <br>
+   <br>
+
+
+  <!-- contact section -->
+
+  <section class="contact_section ">
+    <div class="container px-0">
+      <div class="heading_container ">
+        <h2 class="">
+          Contact Us
+        </h2>
+      </div>
+    </div>
+    <div class="container container-bg">
+      <div class="row">
+        <div class="col-lg-7 col-md-6 px-0">
+          <div class="map_container">
+            <div class="map-responsive">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.7235333665144!2d77.98090187425831!3d10.363976440293026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00ab32f2de6b97%3A0xc33242e0410adecf!2sGiftie%20bags!5e0!3m2!1sen!2sin!4v1720972046450!5m2!1sen!2sin" width="1250" height="400" frameborder="0" ></iframe>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <!-- end contact section -->
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2-top" style="margin-left: 20px; margin-right: 20px;">
+    <div class="info_container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-6">
+            <h6>ABOUT US</h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <h6>CONTACT US</h6>
+            <div class="info_link-box">
+              <a href="https://maps.app.goo.gl/H4hfAr19bzM3irhd8">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span> Kumaran thirunagar, Dindigul, Tamil Nadu 624001 </span>
+              </a>
+              <div class="contact_info">
+                <a href="tel:+918248414131">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span>+91 82484 14131</span>
+                </a>
+                <a href="mailto:giftiebags@gmail.com">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>giftiebags@gmail.com</span>
+                </a>
+              </div>
+            </div>            
+            <div class="social_box">
+              <a href="https://www.facebook.com/" class="social_icon">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="https://wa.me/8248414131" class="social_icon">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+              </a>              
+              <a href="http://www.instagram.com/giftiebags" class="social_icon">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="social_icon">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div class="container">
+        <p>&copy; <span id="displayYear">All Rights Reserved by</span> Giftiebags</p>
+      </div>
+    </footer>
+    <!-- footer section -->
+  </section>
+
+  <!-- end info section -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="js/custom.js"></script>
+</body>
+
+</html>
