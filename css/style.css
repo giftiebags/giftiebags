@@ -659,6 +659,13 @@ textarea.form-control {
   background-color: #0056b3;
 }
 
+/* submit button */
+.center-button {
+  display: flex;
+  justify-content: center;
+}
+
+
 @media (max-width: 768px) {
   .carousel-item {
     height: 240px; /* Adjust for tablets */

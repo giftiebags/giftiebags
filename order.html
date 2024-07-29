@@ -22,47 +22,55 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+    .center-button {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
 </head>
 
 <body>
   <div class="hero_area">
     <!-- header section starts -->
     <header class="header_section">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
-            <img src="images/giftie.png" alt="Giftiebags Logo" class="img-fluid" style="max-width: 70px;">
-            <span class="d-none d-lg-inline">Giftiebags</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Categories
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
-                  <a class="dropdown-item" href="bags.html">Bags</a>
-                  <a class="dropdown-item" href="gift.html">Gift</a>
-                  <a class="dropdown-item" href="jermen.html">Jarmen Silver & Gold</a>
-                  <a class="dropdown-item" href="jute.html">Jute Bag</a>
-                  <a class="dropdown-item" href="plate.html">Plates</a>
-                  <a class="dropdown-item" href="rent.html">Rent</a>
-                  <a class="dropdown-item" href="customized.html">Customized</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/giftie.png" alt="Giftiebags Logo" class="img-fluid" style="max-width: 70px;">
+          <span class="d-none d-lg-inline">Giftiebags</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
+                <a class="dropdown-item" href="bags.html">Bags</a>
+                <a class="dropdown-item" href="gift.html">Gift</a>
+                <a class="dropdown-item" href="jermen.html">Jarmen Silver & Gold</a>
+                <a class="dropdown-item" href="jute.html">Jute Bag</a>
+                <a class="dropdown-item" href="plate.html">Plates</a>
+                <a class="dropdown-item" href="rent.html">Rent</a>
+                <a class="dropdown-item" href="customized.html">Customized</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <!-- end header section -->
 
     <!-- Order form section -->
@@ -75,7 +83,8 @@
         </div>
         <div class="row">
           <div class="col-md-8 mx-auto">
-            <form id="order-form">
+            <form id="order-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="21c67c5f-2c11-462a-885e-58b8f80082b0">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
@@ -101,7 +110,9 @@
                 <label for="additionalModelNo">Additional Model No</label>
                 <input type="text" class="form-control" id="additionalModelNo" placeholder="Enter additional model numbers">
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <div class="form-group center-button">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
             </form>
           </div>
         </div>
@@ -205,6 +216,7 @@
           // Here you can add the code to handle the form data, e.g., send it to a server
           alert('Order submitted successfully!');
           form.reset();
+          window.location.href = 'confirmation.html';
         } else {
           alert('Please fill in all required fields.');
         }
