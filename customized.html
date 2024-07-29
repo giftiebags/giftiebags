@@ -32,9 +32,9 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const bagsContainer = document.getElementById('bags-container');
+      const bagsContainer = document.getElementById('customized-container');
   
-      for (let i = 1; i <= 44; i++) {
+      for (let i = 1; i <= 12; i++) {
         const colDiv = document.createElement('div');
         colDiv.className = 'col-sm-6 col-md-4 col-lg-3';
   
@@ -42,19 +42,20 @@
         boxDiv.className = 'box';
   
         const aElement = document.createElement('a');
+        aElement.href = `order.html?model=C${i}`;
   
         const imgBoxDiv = document.createElement('div');
         imgBoxDiv.className = 'img-box';
   
         const imgElement = document.createElement('img');
-        imgElement.src = `images/Bags/Bag ${i}.jpg`;
-        imgElement.alt = `Bag ${i}`;
+        imgElement.src = `images/customized/customized ${i}.jpg`;
+        imgElement.alt = `Customized ${i}`;
   
         const newDiv = document.createElement('div');
         newDiv.className = 'new';
   
         const spanElement = document.createElement('span');
-        spanElement.innerHTML = `&#9733; B${i}`;
+        spanElement.innerHTML = `&#9733; C${i}`;
   
         imgBoxDiv.appendChild(imgElement);
         newDiv.appendChild(spanElement);
@@ -153,7 +154,7 @@
         </h2>
       </div>
       
-      <div id="bags-container" class="row"></div>
+      <div id="customized-container" class="row"></div>
 
       
     </div>
@@ -204,7 +205,9 @@
           <div class="col-md-6 col-lg-6">
             <h6>ABOUT US</h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Giftie Bags offers a curated selection of premium products for special occasions, including elegant gifts,
+              plates, customized items, and beautiful Jarmen gold and silver materials. Perfect for making your
+              celebrations memorable.
             </p>
           </div>
           <div class="col-md-6 col-lg-6">
