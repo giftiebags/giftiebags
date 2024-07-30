@@ -27,6 +27,40 @@
       display: flex;
       justify-content: center;
     }
+
+    .quantity-container {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+    }
+
+    .quantity-container input {
+      text-align: center;
+      width: 60px;
+      border: none;
+      outline: none;
+      padding: .375rem .75rem;
+    }
+
+    .quantity-container button {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: .375rem .75rem;
+      cursor: pointer;
+      border-radius: 0;
+      height: 100%;
+      width: 40px;
+    }
+
+    .quantity-container button:hover {
+      background-color: #0056b3;
+    }
+
+    .quantity-container button:active {
+      background-color: #004085;
+    }
   </style>
 </head>
 
@@ -83,32 +117,52 @@
         </div>
         <div class="row">
           <div class="col-md-8 mx-auto">
-            <form id="order-form" action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="21c67c5f-2c11-462a-885e-58b8f80082b0">
+            <form id="order-form" action="https://formsubmit.co/giftiebags@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://giftiebags.vercel.app/confirmation.html">
+              <div class="form-group">
+                <label for="modelNo">Model No</label>
+                <input type="text" class="form-control" id="modelNo" name="modelNo" readonly>
+              </div>
+              <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <div class="quantity-container">
+                  <button type="button" id="decrement" class="btn btn-secondary">-</button>
+                  <input type="number" id="quantity" name="quantity" value="1" min="1" class="form-control">
+                  <button type="button" id="increment" class="btn btn-secondary">+</button>
+                </div>
+              </div>
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
+                  required>
               </div>
               <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number"
+                  pattern="[0-9]{10}" required>
                 <small class="form-text text-muted">Enter a 10-digit phone number.</small>
               </div>
               <div class="form-group">
                 <label for="address">Address</label>
-                <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" required></textarea>
+                <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter your address"
+                  required></textarea>
               </div>
+
               <div class="form-group">
-                <label for="modelNo">Model No</label>
-                <input type="text" class="form-control" id="modelNo" readonly>
+                <label for="pincode">Pincode</label>
+                <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Enter your pincode"
+                  pattern="[0-9]{6}" required>
               </div>
               <div class="form-group">
                 <label for="additionalModelNo">Additional Model No</label>
-                <input type="text" class="form-control" id="additionalModelNo" placeholder="Enter additional model numbers">
+                <input type="text" class="form-control" id="additionalModelNo" name="additionalModelNo"
+                  placeholder="Enter additional model numbers">
               </div>
               <div class="form-group center-button">
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -128,7 +182,8 @@
             <div class="col-md-6 col-lg-6">
               <h6>ABOUT US</h6>
               <p>
-                Giftie Bags offers a curated selection of premium products for special occasions, including elegant gifts,
+                Giftie Bags offers a curated selection of premium products for special occasions, including elegant
+                gifts,
                 plates, customized items, and beautiful Jarmen gold and silver materials. Perfect for making your
                 celebrations memorable.
               </p>
@@ -181,51 +236,36 @@
 
   </div>
 
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const urlParams = new URLSearchParams(window.location.search);
       const modelNo = urlParams.get('model');
       if (modelNo) {
         document.getElementById('modelNo').value = modelNo;
       }
+    });
 
-      const form = document.getElementById('order-form');
-      form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const address = document.getElementById('address').value;
-        const modelNo = document.getElementById('modelNo').value;
-        const additionalModelNo = document.getElementById('additionalModelNo').value;
+    document.addEventListener('DOMContentLoaded', function () {
+      var quantityInput = document.getElementById('quantity');
+      var decrementButton = document.getElementById('decrement');
+      var incrementButton = document.getElementById('increment');
 
-        const phonePattern = /^[0-9]{10}$/;
-        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-        if (!phonePattern.test(phone)) {
-          alert('Please enter a valid 10-digit phone number.');
-          return;
+      decrementButton.addEventListener('click', function () {
+        var currentValue = parseInt(quantityInput.value, 10);
+        if (currentValue > 1) {
+          quantityInput.value = currentValue - 1;
         }
+      });
 
-        if (!emailPattern.test(email)) {
-          alert('Please enter a valid email address.');
-          return;
-        }
-
-        if (name && email && phone && address && modelNo) {
-          // Here you can add the code to handle the form data, e.g., send it to a server
-          alert('Order submitted successfully!');
-          form.reset();
-          window.location.href = 'confirmation.html';
-        } else {
-          alert('Please fill in all required fields.');
-        }
+      incrementButton.addEventListener('click', function () {
+        var currentValue = parseInt(quantityInput.value, 10);
+        quantityInput.value = currentValue + 1;
       });
     });
   </script>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/custom.js"></script>
 </body>
 
 </html>
