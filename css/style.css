@@ -760,7 +760,7 @@ textarea.form-control {
   .carousel-inner .carousel-item {
     background-size: cover;
     background-position: center;
-    height: 150px; /* Adjust height of carousel items for mobile */
+    height: 130px; /* Adjust height of carousel items for mobile */
   }
 }
 
