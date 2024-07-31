@@ -33,43 +33,7 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const bagsContainer = document.getElementById('gift-container');
-
-      for (let i = 1; i <= 48; i++) {
-        const colDiv = document.createElement('div');
-        colDiv.className = 'col-sm-6 col-md-4 col-lg-3';
-
-        const boxDiv = document.createElement('div');
-        boxDiv.className = 'box';
-
-        const aElement = document.createElement('a');
-        aElement.href = `order.html?model=G${i}`;
-
-        const imgBoxDiv = document.createElement('div');
-        imgBoxDiv.className = 'img-box';
-
-        const imgElement = document.createElement('img');
-        imgElement.src = `images/gify items/Gift item ${i}.jpg`;
-        imgElement.alt = `Gift ${i}`;
-
-        const newDiv = document.createElement('div');
-        newDiv.className = 'new';
-
-        const spanElement = document.createElement('span');
-        spanElement.innerHTML = `&#9733; G${i}`;
-
-        imgBoxDiv.appendChild(imgElement);
-        newDiv.appendChild(spanElement);
-        aElement.appendChild(imgBoxDiv);
-        aElement.appendChild(newDiv);
-        boxDiv.appendChild(aElement);
-        colDiv.appendChild(boxDiv);
-        bagsContainer.appendChild(colDiv);
-      }
-    });
-  </script>
+  
 
 </head>
 
@@ -152,17 +116,103 @@
   <br><br>
 
   <section class="shop_section layout_padding">
+    
+  <!-- Categories section -->
+  <section class="categories_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
-        <h2>
-          Gifts
-        </h2>
+        <h2>Categories</h2>
       </div>
-
-      <div id="gift-container" class="row"></div>
-
-
+      <div class="row" id="categories-container">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="bags.html">
+              <div class="img-box">
+                <img src="images/Bags/Bag 40.jpg" alt="Bags">
+              </div>
+              <div class="detail-box" style="text-align: center;">
+                <h6 >Bags</h6>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="gift.html">
+              <div class="img-box">
+                <img src="images/gify items/Gift item 7.jpg" alt="Gifts">
+              </div>
+              <div class="detail-box">
+                <h6>Gifts</h6>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="jermen.html">
+              <div class="img-box">
+                <img src="images/Jarmen Silver & gold/jerman silver 33.jpg" alt="German Silver & Gold">
+              </div>
+              <div class="detail-box">
+                <h6>German Silver & Gold</h6>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="jute.html">
+              <div class="img-box">
+                <img src="images/Jute Bag/Jute Bag 12.jpg" alt="Jute Bags">
+              </div>
+              <div class="detail-box">
+                <h6>Jute Bags</h6>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="plate.html">
+              <div class="img-box">
+                <img src="images/Plates/Plate 1.jpg" alt="Plates">
+              </div>
+              <div class="detail-box">
+                <h6>Plates</h6>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="rent.html">
+              <div class="img-box">
+                <img src="images/Rent/Rent 1.jpg" alt="Rent">
+              </div>
+              <div class="detail-box">
+                <h6>Rent</h6>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="customized.html">
+              <div class="img-box">
+                <img src="images/customized/customized 1.jpg" alt="Customized">
+              </div>
+              <div class="detail-box">
+                <h6>Customized</h6>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+  <br>
+  <br>
   </section>
   <br><br>
 
@@ -228,6 +278,7 @@
   </section>
 
   <!-- end why section -->
+
   <br>
   <br>
 

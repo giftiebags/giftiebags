@@ -68,28 +68,26 @@
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container">
         <a class="navbar-brand" href="index.html">
-          <img src="images/giftie.png" alt="Giftiebags Logo" class="img-fluid" style="max-width: 70px;">
+          <img src="images/giftie.png" alt="Giftiebags Logo" class="img-fluid" style="max-width: 80px;">
           <span class="d-none d-lg-inline">Giftiebags</span>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+    
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Categories
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
                 <a class="dropdown-item" href="bags.html">Bags</a>
                 <a class="dropdown-item" href="gift.html">Gift</a>
-                <a class="dropdown-item" href="jermen.html">Jarmen Silver & Gold</a>
+                <a class="dropdown-item" href="jermen.html">German Silver & Gold</a>
                 <a class="dropdown-item" href="jute.html">Jute Bag</a>
                 <a class="dropdown-item" href="plate.html">Plates</a>
                 <a class="dropdown-item" href="rent.html">Rent</a>
@@ -124,6 +122,11 @@
                 <input type="text" class="form-control" id="modelNo" name="modelNo" readonly>
               </div>
               <div class="form-group">
+                <label for="additionalModelNo">Additional Model No</label>
+                <input type="text" class="form-control" id="additionalModelNo" name="additionalModelNo"
+                  placeholder="Enter additional model numbers(optional)">
+              </div>
+              <div class="form-group">
                 <label for="quantity">Quantity</label>
                 <div class="quantity-container">
                   <button type="button" id="decrement" class="btn btn-secondary">-</button>
@@ -156,11 +159,6 @@
                 <label for="pincode">Pincode</label>
                 <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Enter your pincode"
                   pattern="[0-9]{6}" required>
-              </div>
-              <div class="form-group">
-                <label for="additionalModelNo">Additional Model No</label>
-                <input type="text" class="form-control" id="additionalModelNo" name="additionalModelNo"
-                  placeholder="Enter additional model numbers">
               </div>
               <div class="form-group center-button">
                 <button type="submit" class="btn btn-primary">Submit</button>

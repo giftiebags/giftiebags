@@ -33,32 +33,32 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
   <script>
-     document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const bagsContainer = document.getElementById('customized-container');
-  
+
       for (let i = 1; i <= 4; i++) {
         const colDiv = document.createElement('div');
         colDiv.className = 'col-sm-6 col-md-4 col-lg-3';
-  
+
         const boxDiv = document.createElement('div');
         boxDiv.className = 'box';
-  
+
         const aElement = document.createElement('a');
         aElement.href = `order.html?model=C${i}`;
-  
+
         const imgBoxDiv = document.createElement('div');
         imgBoxDiv.className = 'img-box';
-  
+
         const imgElement = document.createElement('img');
         imgElement.src = `images/customized/customized ${i}.jpg`;
         imgElement.alt = `Customized ${i}`;
-  
+
         const newDiv = document.createElement('div');
         newDiv.className = 'new';
-  
+
         const spanElement = document.createElement('span');
         spanElement.innerHTML = `&#9733; C${i}`;
-  
+
         imgBoxDiv.appendChild(imgElement);
         newDiv.appendChild(spanElement);
         aElement.appendChild(imgBoxDiv);
@@ -105,32 +105,32 @@
       }
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const bagsContainer = document.getElementById('rent-container');
-  
+
       for (let i = 1; i <= 4; i++) {
         const colDiv = document.createElement('div');
         colDiv.className = 'col-sm-6 col-md-4 col-lg-3';
-  
+
         const boxDiv = document.createElement('div');
         boxDiv.className = 'box';
-  
+
         const aElement = document.createElement('a');
         aElement.href = `order.html?model=R${i}`;
-  
+
         const imgBoxDiv = document.createElement('div');
         imgBoxDiv.className = 'img-box';
-  
+
         const imgElement = document.createElement('img');
         imgElement.src = `images/Rent/Rent ${i}.jpg`;
         imgElement.alt = `Rent ${i}`;
-  
+
         const newDiv = document.createElement('div');
         newDiv.className = 'new';
-  
+
         const spanElement = document.createElement('span');
         spanElement.innerHTML = `&#9733; R${i}`;
-  
+
         imgBoxDiv.appendChild(imgElement);
         newDiv.appendChild(spanElement);
         aElement.appendChild(imgBoxDiv);
@@ -141,32 +141,32 @@
       }
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const bagsContainer = document.getElementById('jute-container');
-  
+
       for (let i = 1; i <= 4; i++) {
         const colDiv = document.createElement('div');
         colDiv.className = 'col-sm-6 col-md-4 col-lg-3';
-  
+
         const boxDiv = document.createElement('div');
         boxDiv.className = 'box';
-  
+
         const aElement = document.createElement('a');
         aElement.href = `order.html?model=JB${i}`;
-  
+
         const imgBoxDiv = document.createElement('div');
         imgBoxDiv.className = 'img-box';
-  
+
         const imgElement = document.createElement('img');
         imgElement.src = `images/Jute Bag/Jute Bag ${i}.jpg`;
         imgElement.alt = `Jute ${i}`;
-  
+
         const newDiv = document.createElement('div');
         newDiv.className = 'new';
-  
+
         const spanElement = document.createElement('span');
         spanElement.innerHTML = `&#9733; JB${i}`;
-  
+
         imgBoxDiv.appendChild(imgElement);
         newDiv.appendChild(spanElement);
         aElement.appendChild(imgBoxDiv);
@@ -213,33 +213,33 @@
       }
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const bagsContainer = document.getElementById('bags-container');
-  
+
       for (let i = 40; i <= 43; i++) {
         const colDiv = document.createElement('div');
         colDiv.className = 'col-sm-6 col-md-4 col-lg-3';
-  
+
         const boxDiv = document.createElement('div');
         boxDiv.className = 'box';
-  
+
         const aElement = document.createElement('a');
         aElement.href = `order.html?model=B${i}`;
 
-  
+
         const imgBoxDiv = document.createElement('div');
         imgBoxDiv.className = 'img-box';
-  
+
         const imgElement = document.createElement('img');
         imgElement.src = `images/Bags/Bag ${i}.jpg`;
         imgElement.alt = `Bag ${i}`;
-  
+
         const newDiv = document.createElement('div');
         newDiv.className = 'new';
-  
+
         const spanElement = document.createElement('span');
         spanElement.innerHTML = `&#9733; B${i}`;
-  
+
         imgBoxDiv.appendChild(imgElement);
         newDiv.appendChild(spanElement);
         aElement.appendChild(imgBoxDiv);
@@ -260,8 +260,8 @@
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container">
         <a class="navbar-brand" href="index.html">
-          <img src="images/giftie.png" alt="Giftiebags Logo" class="img-fluid d-none d-lg-inline" style="max-width: 70px;">
-          <span class="d-lg-none d-lg-inline ">Giftiebags</span>
+          <img src="images/giftie.png" alt="Giftiebags Logo" class="img-fluid" style="max-width: 80px;">
+          <span class="d-none d-lg-inline">Giftiebags</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -281,7 +281,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
                 <a class="dropdown-item" href="bags.html">Bags</a>
                 <a class="dropdown-item" href="gift.html">Gift</a>
-                <a class="dropdown-item" href="jermen.html">Jarmen Silver & Gold</a>
+                <a class="dropdown-item" href="jermen.html">German Silver & Gold</a>
                 <a class="dropdown-item" href="jute.html">Jute Bag</a>
                 <a class="dropdown-item" href="plate.html">Plates</a>
                 <a class="dropdown-item" href="rent.html">Rent</a>
@@ -328,7 +328,12 @@
     <!-- end slider section -->
   </div>
   <!-- end hero area -->
-
+  <div class="marquee-container">
+    <marquee class="interactive-marquee" behavior="scroll" direction="left" scrollamount="6">
+      For more products just click here: 
+      <a href="categories.html" class="marquee-link">Explore Categories</a>
+    </marquee>
+  </div>
   <!-- shop section -->
   <br><br>
 
@@ -346,7 +351,7 @@
       <div id="gift-container" class="row"></div>
       <div id="bags-container" class="row"></div>
 
-      
+
 
     </div>
   </section>
@@ -354,10 +359,7 @@
 
   <!-- end shop section -->
 
-  <!-- saving section -->
-
-
-  <!-- end saving section -->
+ 
 
   <!-- why section -->
 
@@ -369,7 +371,7 @@
         </h2>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="box ">
             <div class="img-box">
               <img src="images/delivery.svg" width="50px" height="50px" />
@@ -384,7 +386,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="box ">
             <div class="img-box">
               <img src="images/best quality.svg" width="50px" height="50px" />
@@ -395,6 +397,21 @@
               </h5>
               <p>
                 "We pride ourselves on offering top-tier products crafted with the highest standards of excellence"
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/price.svg" width="50px" height="50px" />
+            </div>
+            <div class="detail-box">
+              <h5>
+                Affordable Price
+              </h5>
+              <p>
+                "Affordable gifts for every occasion, Quality gifts at prices you'll love. just a click away!"
               </p>
             </div>
           </div>

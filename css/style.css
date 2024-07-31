@@ -665,6 +665,32 @@ textarea.form-control {
   justify-content: center;
 }
 
+/* Marquee */
+.marquee-container {
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.interactive-marquee {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.marquee-link {
+  color: #007bff;
+  text-decoration: none;
+  padding: 0 5px;
+}
+
+.marquee-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+
 
 @media (max-width: 768px) {
   .carousel-item {
