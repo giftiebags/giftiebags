@@ -728,12 +728,15 @@ textarea.form-control {
 /* Header section adjustments for mobile view */
 @media (max-width: 767px) {
   .navbar-brand {
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
   }
+
   
-  .navbar-brand img {
-    max-width: 50px; /* Adjust logo size for mobile */
+  .navbar-brand img{
+    width: 70px;
+    height: 70px;
+    padding-bottom: 2px;
   }
 
   .navbar-nav {
@@ -755,6 +758,7 @@ textarea.form-control {
 
   .navbar-toggler {
     border: none; /* Remove border from toggler button */
+    padding-bottom: 12px;
   }
 
   .carousel-inner .carousel-item {
@@ -766,9 +770,7 @@ textarea.form-control {
 
 /* Adjustments for larger mobile screens */
 @media (max-width: 991px) and (min-width: 768px) {
-  .navbar-brand img {
-    max-width: 60px; /* Adjust logo size for tablets */
-  }
+  
 
   .carousel-inner .carousel-item {
     height: 300px; /* Adjust height of carousel items for tablets */
