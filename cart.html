@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords"
+    content="Giftiebags, Gifts for all occasions, Online gift shop, Fast delivery gifts, Affordable gifts, High-quality gifts, Buy gifts online, Best gift shop, Gifts for birthdays, Gifts for anniversaries, Unique gift items, Gift ideas, E-commerce gifts, Dindigul gift shop, Tamil Nadu gifts" />
+  <meta name="description"
+    content="Giftiebags is your one-stop online gift shop offering a wide range of high-quality, affordable gifts for all occasions with fast delivery. Discover unique gift items for birthdays, anniversaries, and more." />
+  <meta name="author" content="Giftiebags" />
+  <!-- bootstrap core js -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <title>Giftiebags - Cart</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    /* Existing styles */
+    .cart-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+  
+    .cart-item img {
+      width: 100px;
+      height: auto;
+      margin-right: 20px;
+    }
+  
+    .cart-item-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .cart-item-info p {
+      margin: 5px 0;
+    }
+  
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      gap: 10px; /* Added spacing between buttons */
+    }
+  
+    .quantity-controls button {
+      background: #007bff; /* Blue background color */
+      border: 1px solid #007bff;
+      color: #fff; /* White text color */
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px; /* Rounded corners */
+    }
+  
+    .quantity-controls button:hover {
+      background: #0056b3; /* Darker blue on hover */
+    }
+  
+    .quantity-controls input {
+      width: 50px;
+      text-align: center;
+      border: 1px solid #ccc;
+      margin: 0 5px;
+    }
+  
+    .remove-button {
+      background: #dc3545; /* Red background color */
+      border: 1px solid #dc3545;
+      color: #fff; /* White text color */
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px; /* Rounded corners */
+      margin-left: 10px;
+    }
+  
+    .remove-button:hover {
+      background: #c82333; /* Darker red on hover */
+    }
+  
+    .order-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .cart-summary {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  
+    .cart-summary table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+    .cart-summary th, .cart-summary td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+  
+    .cart-summary th {
+      background-color: #f4f4f4;
+    }
+  
+    .cart-summary caption {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+  
+      .cart-item img {
+        width: 80%; /* Adjust width as needed */
+        margin-bottom: 10px;
+      }
+  
+      .cart-item-info {
+        margin-bottom: 10px;
+      }
+  
+      .quantity-controls {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+      }
+  
+      .order-button {
+        margin-top: 10px;
+        text-align: center;
+      }
+  
+      .cart-summary {
+        margin-top: 10px;
+      }
+  
+      .remove-button {
+        display: block;
+        margin-top: 10px;
+        color: #fff; /* White text color */
+      }
+    }
+  
+    @media (max-width: 576px) {
+      .cart-item img {
+        width: 100%;
+      }
+  
+      .quantity-controls input {
+        width: 40px;
+      }
+    }
+
+    /* Hidden class */
+    .hidden {
+      display: none;
+    }
+  </style>
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loadCart = () => {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartContainer = document.getElementById('cart-container');
+        const modelNumbersContainer = document.getElementById('model-numbers');
+        const orderButton = document.querySelector('.order-button');
+        cartContainer.innerHTML = '';
+        modelNumbersContainer.innerHTML = `
+          <table>
+            <caption>Cart Summary</caption>
+            <thead>
+              <tr>
+                <th>Model Number</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        `;
+  
+        const tbody = modelNumbersContainer.querySelector('tbody');
+  
+        if (cartItems.length === 0) {
+          cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+          orderButton.classList.add('hidden'); // Hide the order button
+        } else {
+          cartItems.forEach(item => {
+            const cartItemDiv = document.createElement('div');
+            cartItemDiv.className = 'cart-item';
+  
+            const imgElement = document.createElement('img');
+            imgElement.src = item.imgSrc;
+            imgElement.alt = item.model;
+  
+            const infoDiv = document.createElement('div');
+            infoDiv.className = 'cart-item-info';
+            infoDiv.innerHTML = `<p>Model Number: ${item.model}</p>`;
+  
+            const quantityDiv = document.createElement('div');
+            quantityDiv.className = 'quantity-controls';
+            quantityDiv.innerHTML = `
+              <button class="quantity-decrease" data-model="${item.model}">-</button>
+              <input type="text" value="${item.quantity}" readonly />
+              <button class="quantity-increase" data-model="${item.model}">+</button>
+              <button class="remove-button" data-model="${item.model}"><i class="fa fa-trash"></i></button>
+            `;
+  
+            infoDiv.appendChild(quantityDiv);
+            cartItemDiv.appendChild(imgElement);
+            cartItemDiv.appendChild(infoDiv);
+            cartContainer.appendChild(cartItemDiv);
+  
+            // Append to the table
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${item.model}</td>
+              <td>${item.quantity}</td>
+            `;
+            tbody.appendChild(row);
+          });
+          orderButton.classList.remove('hidden'); // Show the order button
+        }
+  
+        // Attach event listeners to quantity and remove buttons
+        document.querySelectorAll('.quantity-decrease').forEach(button => {
+          button.addEventListener('click', function() {
+            const model = this.getAttribute('data-model');
+            changeQuantity(model, -1);
+          });
+        });
+  
+        document.querySelectorAll('.quantity-increase').forEach(button => {
+          button.addEventListener('click', function() {
+            const model = this.getAttribute('data-model');
+            changeQuantity(model, 1);
+          });
+        });
+  
+        document.querySelectorAll('.remove-button').forEach(button => {
+          button.addEventListener('click', function() {
+            const model = this.getAttribute('data-model');
+            removeFromCart(model);
+          });
+        });
+      };
+  
+      window.changeQuantity = (model, change) => {
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems = cartItems.map(item => {
+          if (item.model === model) {
+            item.quantity = Math.max(item.quantity + change, 1); // Ensure minimum quantity is 1
+          }
+          return item;
+        });
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        loadCart();
+      };
+  
+      const removeFromCart = (model) => {
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems = cartItems.filter(item => item.model !== model);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        loadCart();
+      };
+  
+      const initializeCart = () => {
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems = cartItems.map(item => {
+          if (!item.quantity) {
+            item.quantity = 1;
+          }
+          return item;
+        });
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+      };
+  
+      initializeCart();
+      loadCart();
+  
+      // Order button click handler
+      document.querySelector('.order-button button').addEventListener('click', () => {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        localStorage.setItem('orderDetails', JSON.stringify(cartItems));
+        window.location.href = 'CartOrder.html';
+      });
+    });
+  </script>
+  
+  <!-- FontAwesome for the trash icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/giftie.jpg" alt="Giftiebags Logo" class="img-fluid" style="max-width: 80px;">
+          <span class=" d-lg-inline" style="font-size: 26px; padding-left: 8px;">Giftiebags</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- header section ends -->
+
+    <section class="cart_section">
+      <div class="container">
+        <h2>Your Cart</h2>
+        <div class="row">
+          <div class="col-md-8">
+            <div id="cart-container"></div>
+          </div>
+          <div class="col-md-4">
+            <div class="cart-summary">
+              <h5>Your Orders:</h5>
+              <div id="model-numbers">
+                <!-- The table for model numbers and quantities will be inserted here by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-button">
+          <button class="btn btn-primary">Order</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- footer section starts -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="footer_logo">
+        <a href="index.html">
+          <img src="images/giftie.jpg" alt="Giftiebags Logo" class="img-fluid" style="max-width: 80px;">
+          <span>Giftiebags</span>
+        </a>
+      </div>
+      <div class="footer_info">
+        <p>&copy; 2024 Giftiebags. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section ends -->
+
+</body>
+
+</html>

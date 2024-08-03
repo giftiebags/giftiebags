@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="Giftiebags, Gifts for all occasions, Online gift shop, Fast delivery gifts, Affordable gifts, High-quality gifts, Buy gifts online, Best gift shop, Gifts for birthdays, Gifts for anniversaries, Unique gift items, Gift ideas, E-commerce gifts, Dindigul gift shop, Tamil Nadu gifts" />
+    <meta name="description" content="Giftiebags is your one-stop online gift shop offering a wide range of high-quality, affordable gifts for all occasions with fast delivery. Discover unique gift items for birthdays, anniversaries, and more." />
+    <meta name="author" content="Giftiebags" />
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+    <style>
+        .order-form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+
+        .order-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .order-form input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .order-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .order-form .form-group input {
+            width: calc(50% - 10px);
+            display: inline-block;
+        }
+
+        .order-form .form-group input.quantity {
+            width: calc(50% - 10px);
+        }
+
+        .place-order-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .place-order-button button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .order-form-container {
+                padding: 15px;
+                max-width: 90%; /* Reduced width for mobile devices */
+            }
+
+            .order-form .form-group input {
+                width: 100%;
+                display: block;
+            }
+
+            .order-form .form-group input.quantity {
+                width: 100%;
+            }
+
+            .place-order-button button {
+                width: 100%;
+                padding: 12px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .order-form-container {
+                margin: 20px auto; /* Reduced margin for smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero_area">
+        <!-- header section starts -->
+        <header class="header_section">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/giftie.jpg" alt="Giftiebags Logo" class="img-fluid" style="max-width: 80px;">
+                    <span class="d-lg-inline" style="font-size: 26px; padding-left: 8px;">Giftiebags</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categories
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
+                                <a class="dropdown-item" href="bags.html">Bags</a>
+                                <a class="dropdown-item" href="gift.html">Gift</a>
+                                <a class="dropdown-item" href="jermen.html">German Silver & Gold</a>
+                                <a class="dropdown-item" href="jute.html">Jute Bag</a>
+                                <a class="dropdown-item" href="plate.html">Plates</a>
+                                <a class="dropdown-item" href="rent.html">Rent</a>
+                                <a class="dropdown-item" href="customized.html">Customized</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- end header section -->
+    </div>
+
+    <div class="container order-form-container">
+        <h2 class="text-center">Order Form</h2>
+        <form class="order-form" id="order-form">
+            <!-- Dynamic fields will be added here -->
+            <div id="order-items"></div>
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile No:</label>
+                <input type="text" id="mobile" name="mobile" required />
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required />
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" required />
+            </div>
+
+            <div class="place-order-button">
+                <button type="submit">Place Order</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- footer section -->
+    <section class="info_section layout_padding2-top" style="margin-left: 20px; margin-right: 20px;">
+        <div class="info_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <h6>ABOUT US</h6>
+                        <p>
+                            Giftie Bags offers a curated selection of premium products for special occasions, including elegant gifts, plates, customized items, and beautiful Jarmen gold and silver materials. Perfect for making your celebrations memorable.
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <h6>CONTACT US</h6>
+                        <div class="info_link-box">
+                            <a href="https://maps.app.goo.gl/H4hfAr19bzM3irhd8">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span> Kumaran thirunagar, Dindigul, Tamil Nadu 624001 </span>
+                            </a>
+                            <div class="contact_info">
+                                <a href="tel:+918248414131">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <span>+91 82484 14131</span>
+                                </a>
+                                <a href="mailto:giftiebags@gmail.com">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <span>giftiebags@gmail.com</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="social_box">
+                            <a href="https://www.facebook.com/" class="social_icon">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wa.me/8248414131" class="social_icon">
+                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                            <a href="http://www.instagram.com/giftiebags" class="social_icon">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social_icon">
+                                <i class="fa fa-youtube" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer_section">
+            <div class="container">
+                <p>&copy; <span id="displayYear">All Rights Reserved by</span> Giftiebags</p>
+            </div>
+        </footer>
+    </section>
+    <!-- end footer section -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const orderItemsContainer = document.getElementById('order-items');
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add fields dynamically based on cart items
+            cartItems.forEach((item, index) => {
+                const modelNumberDiv = document.createElement('div');
+                modelNumberDiv.className = 'form-group';
+                modelNumberDiv.innerHTML = `
+                    <label for="model-number-${index}">Model Number ${index + 1}:</label>
+                    <input type="text" id="model-number-${index}" name="model-number-${index}" value="${item.model}" readonly />
+                `;
+
+                const quantityDiv = document.createElement('div');
+                quantityDiv.className = 'form-group';
+                quantityDiv.innerHTML = `
+                    <label for="quantity-${index}">Quantity ${index + 1}:</label>
+                    <input type="text" id="quantity-${index}" name="quantity-${index}" value="${item.quantity}" class="quantity" readonly />
+                `;
+
+                orderItemsContainer.appendChild(modelNumberDiv);
+                orderItemsContainer.appendChild(quantityDiv);
+            });
+        });
+    </script>
+</body>
+
+</html>

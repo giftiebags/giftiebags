@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import url("font-awesome.min.css");
+
 body {
   font-family: "Poppins", sans-serif;
   color: #101010;
@@ -190,23 +191,34 @@ textarea.form-control {
 
 /* Dropdown menu styles */
 .dropdown-menu {
-  background-color: #ffffff; /* Background color */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for dropdown */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px 0; /* Padding inside dropdown menu */
+  background-color: #ffffff;
+  /* Background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Box shadow for dropdown */
+  border: none;
+  /* Remove default border */
+  border-radius: 5px;
+  /* Rounded corners */
+  padding: 10px 0;
+  /* Padding inside dropdown menu */
 }
 
 .dropdown-menu a {
-  color: #333; /* Text color */
-  padding: 10px 20px; /* Padding around text */
-  display: block; /* Display as block element */
-  text-decoration: none; /* Remove underline */
-  transition: background-color 0.3s; /* Smooth background color transition */
+  color: #333;
+  /* Text color */
+  padding: 10px 20px;
+  /* Padding around text */
+  display: block;
+  /* Display as block element */
+  text-decoration: none;
+  /* Remove underline */
+  transition: background-color 0.3s;
+  /* Smooth background color transition */
 }
 
 .dropdown-menu a:hover {
-  background-color: #f0f0f0; /* Background color on hover */
+  background-color: #f0f0f0;
+  /* Background color on hover */
 }
 
 /*end header section*/
@@ -217,7 +229,7 @@ textarea.form-control {
   background-position: center;
   background-repeat: no-repeat;
   height: 600px;
-  
+
 }
 
 .shop_section .heading_container {
@@ -227,37 +239,47 @@ textarea.form-control {
 .shop_section .box {
   background-color: #eeeeee;
   position: relative;
-  padding: 0; /* Remove padding */
+  padding: 0;
+  /* Remove padding */
   margin-top: 25px;
-  border: 1px solid rgb(41, 40, 40); /* Add border color */
-  border-radius: 10px; /* Add border radius */
+  border: 1px solid rgb(41, 40, 40);
+  /* Add border color */
+  border-radius: 10px;
+  /* Add border radius */
 }
 
 .shop_section .box a {
   color: #000000;
-  display: block; /* Ensure the link takes full space */
+  display: block;
+  /* Ensure the link takes full space */
 }
 
 .shop_section .box .img-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto; /* Let the height adjust based on the image */
-  overflow: hidden; /* Ensure the image fits within the container */
-  margin: 0; /* Remove any margin */
-  background-color: white; /* Set background color to gray */
+  height: auto;
+  /* Let the height adjust based on the image */
+  overflow: hidden;
+  /* Ensure the image fits within the container */
+  margin: 0;
+  /* Remove any margin */
+  background-color: white;
+  /* Set background color to gray */
 }
 
 .shop_section .box .img-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the image covers the entire container */
+  object-fit: cover;
+  /* Ensure the image covers the entire container */
 }
 
 .shop_section .box .detail-box {
   display: flex;
   justify-content: space-between;
-  padding: 10px; /* Add padding to the detail box if needed */
+  padding: 10px;
+  /* Add padding to the detail box if needed */
 }
 
 .shop_section .box .detail-box h6 span {
@@ -276,8 +298,10 @@ textarea.form-control {
   align-items: center;
   border-radius: 100%;
   font-size: 12px;
-  border: 1px solid black; /* Added border */
-  box-sizing: border-box; /* Ensures the border is included in the element's dimensions */
+  border: 1px solid black;
+  /* Added border */
+  box-sizing: border-box;
+  /* Ensures the border is included in the element's dimensions */
 }
 
 .shop_section .btn-box {
@@ -333,8 +357,8 @@ textarea.form-control {
 
 .gift_section .row {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .gift_section .img-box {
@@ -358,7 +382,7 @@ textarea.form-control {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 35px -5px 0;
 }
 
@@ -407,7 +431,7 @@ textarea.form-control {
 
 .contact_section .container-bg {
   -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
 }
 
 .contact_section .heading_container {
@@ -416,8 +440,8 @@ textarea.form-control {
 
 .contact_section .row {
   -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .contact_section form {
@@ -491,7 +515,7 @@ textarea.form-control {
 .client_section .box {
   margin: 15px 45px;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   padding: 25px;
 }
 
@@ -500,8 +524,8 @@ textarea.form-control {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .client_section .box .client_info .client_name h5 {
@@ -534,7 +558,7 @@ textarea.form-control {
   font-weight: bold;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .client_section .carousel-control-prev {
@@ -554,7 +578,8 @@ textarea.form-control {
   margin-right: 90px; */
   margin-bottom: 20px;
   padding-top: 40px;
-  padding-bottom: 20px; /* Adjust as needed */
+  padding-bottom: 20px;
+  /* Adjust as needed */
 }
 
 .info_container {
@@ -613,19 +638,24 @@ textarea.form-control {
 /* Adjustments for footer */
 /* Adjustments for footer */
 .footer_section {
-  margin-top: 30px; /* Adjust margin as needed */
-  padding: 20px 0; /* Adjust padding as needed */
+  margin-top: 30px;
+  /* Adjust margin as needed */
+  padding: 20px 0;
+  /* Adjust padding as needed */
   font-weight: 500;
   text-align: center;
   color: #cbc9c9;
-  background-color: #2d2d2d; /* Background color for footer */
+  background-color: #2d2d2d;
+  /* Background color for footer */
 }
 
 .footer_section p {
   margin: 0 auto;
   border-top: 1.5px solid #eeeeee;
-  width: 80%; /* Adjust width for desktop */
-  padding: 20px 0; /* Adjust padding for desktop */
+  width: 80%;
+  /* Adjust width for desktop */
+  padding: 20px 0;
+  /* Adjust padding for desktop */
 }
 
 .button_section {
@@ -690,11 +720,151 @@ textarea.form-control {
   color: #0056b3;
 }
 
+/*cart and buy now button*/
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  /* Adds space between the buttons */
+  margin-top: 10px;
+  padding: 10px 0;
+  /* Adds spacing above and below the buttons */
+}
+
+.button-container .btn {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-container .btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.button-container .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.button-container .btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.button-container .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.button-container .btn:active {
+  transform: scale(0.95);
+}
+
+/* Cart icon styles */
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon {
+  color: black; /* Change the color to black */
+  width: 30px;
+  height: 30px;
+}
+
+/* Hide the desktop cart icon in mobile view */
+.d-lg-none {
+  display: none;
+}
+
+/* Show the cart icon only on mobile view */
+@media (max-width: 991.98px) {
+  .d-lg-none {
+    display: inline-block;
+  }
+  .d-none {
+    display: none;
+  }
+}
+
+/* Show the desktop cart icon in desktop view */
+@media (min-width: 992px) {
+  .d-lg-block {
+    display: block;
+  }
+}
+
+
+
+.notification {
+  display: none;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #ff5722; /* Change to a more noticeable color */
+  color: white;
+  padding: 10px 20px; /* Increase padding for better visibility */
+  border-radius: 5px;
+  font-size: 14px; /* Larger font for better readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 0; /* Start with opacity 0 */
+  transform: translateY(-10px); /* Start with slight upward translation */
+}
+
+.notification.show {
+  display: block;
+  opacity: 1; /* Set opacity to 1 when shown */
+  transform: translateY(0); /* Remove translation when shown */
+}
+
+
+
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls button {
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.quantity-controls input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin: 0 5px;
+}
+
+.order-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.cart-container {
+  display: none;
+  position: absolute;
+  top: 15px; /* Adjust based on header height */
+  right: 15px; /* Adjust distance from the right edge */
+  z-index: 1000; /* Make sure it stays on top */
+}
 
 
 @media (max-width: 768px) {
   .carousel-item {
-    height: 240px; /* Adjust for tablets */
+    height: 240px;
+    /* Adjust for tablets */
+  }
+  .d-lg-none {
+    display: block;
+    margin-top: 55px;
   }
 
   .d-inline {
@@ -702,13 +872,17 @@ textarea.form-control {
   }
 
   .footer_section {
-    margin-top: 20px; /* Adjust margin for smaller screens */
-    padding: 15px 0; /* Adjust padding for smaller screens */
+    margin-top: 20px;
+    /* Adjust margin for smaller screens */
+    padding: 15px 0;
+    /* Adjust padding for smaller screens */
   }
 
   .footer_section p {
-    width: 90%; /* Adjust width for smaller screens */
-    padding: 10px 0; /* Adjust padding for smaller screens */
+    width: 90%;
+    /* Adjust width for smaller screens */
+    padding: 10px 0;
+    /* Adjust padding for smaller screens */
   }
 
   iframe {
@@ -718,9 +892,12 @@ textarea.form-control {
 
   .about_us h6,
   .contact_info h6 {
-    text-align: left; /* Align headings to the left */
-    margin-bottom: 10px; /* Adjust margin if needed */
+    text-align: left;
+    /* Align headings to the left */
+    margin-bottom: 10px;
+    /* Adjust margin if needed */
   }
+
   /* end footer section */
   /*# sourceMappingURL=style.css.map */
 }
@@ -732,11 +909,20 @@ textarea.form-control {
     text-align: center;
   }
 
-  
-  .navbar-brand img{
-    width: 70px;
-    height: 70px;
+
+  .navbar-brand img {
+    width: 60px;
+    height: 60px;
     padding-bottom: 2px;
+  }
+
+  .navbar-brand span{
+    font-size: 20px;
+  }
+
+  .cart-icon{
+    width:35px;
+    height:35px;
   }
 
   .navbar-nav {
@@ -754,25 +940,29 @@ textarea.form-control {
   .dropdown-menu {
     text-align: center;
   }
-  
+
 
   .navbar-toggler {
-    border: none; /* Remove border from toggler button */
-    padding-bottom: 12px;
+    border: none;
+    /* Remove border from toggler button */
+    padding-bottom: 4px;
   }
+  
 
   .carousel-inner .carousel-item {
     background-size: cover;
     background-position: center;
-    height: 130px; /* Adjust height of carousel items for mobile */
+    height: 130px;
+    /* Adjust height of carousel items for mobile */
   }
 }
 
 /* Adjustments for larger mobile screens */
 @media (max-width: 991px) and (min-width: 768px) {
-  
+
 
   .carousel-inner .carousel-item {
-    height: 300px; /* Adjust height of carousel items for tablets */
+    height: 300px;
+    /* Adjust height of carousel items for tablets */
   }
 }
