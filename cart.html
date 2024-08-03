@@ -39,95 +39,105 @@
       border-bottom: 1px solid #ccc;
       padding-bottom: 10px;
     }
-  
+
     .cart-item img {
       width: 100px;
       height: auto;
       margin-right: 20px;
     }
-  
+
     .cart-item-info {
       flex: 1;
       display: flex;
       flex-direction: column;
     }
-  
+
     .cart-item-info p {
       margin: 5px 0;
     }
-  
+
     .quantity-controls {
       display: flex;
       align-items: center;
       margin-top: 10px;
-      gap: 10px; /* Added spacing between buttons */
+      gap: 10px;
+      /* Added spacing between buttons */
     }
-  
+
     .quantity-controls button {
-      background: #007bff; /* Blue background color */
+      background: #007bff;
+      /* Blue background color */
       border: 1px solid #007bff;
-      color: #fff; /* White text color */
+      color: #fff;
+      /* White text color */
       padding: 5px 10px;
       cursor: pointer;
-      border-radius: 5px; /* Rounded corners */
+      border-radius: 5px;
+      /* Rounded corners */
     }
-  
+
     .quantity-controls button:hover {
-      background: #0056b3; /* Darker blue on hover */
+      background: #0056b3;
+      /* Darker blue on hover */
     }
-  
+
     .quantity-controls input {
       width: 50px;
       text-align: center;
       border: 1px solid #ccc;
       margin: 0 5px;
     }
-  
+
     .remove-button {
-      background: #dc3545; /* Red background color */
+      background: #dc3545;
+      /* Red background color */
       border: 1px solid #dc3545;
-      color: #fff; /* White text color */
+      color: #fff;
+      /* White text color */
       padding: 5px 10px;
       cursor: pointer;
-      border-radius: 5px; /* Rounded corners */
+      border-radius: 5px;
+      /* Rounded corners */
       margin-left: 10px;
     }
-  
+
     .remove-button:hover {
-      background: #c82333; /* Darker red on hover */
+      background: #c82333;
+      /* Darker red on hover */
     }
-  
+
     .order-button {
       text-align: center;
       margin-top: 20px;
     }
-  
+
     .cart-summary {
       border: 1px solid #ccc;
       padding: 10px;
       margin-top: 20px;
     }
-  
+
     .cart-summary table {
       width: 100%;
       border-collapse: collapse;
     }
-  
-    .cart-summary th, .cart-summary td {
+
+    .cart-summary th,
+    .cart-summary td {
       border: 1px solid #ddd;
       padding: 8px;
       text-align: left;
     }
-  
+
     .cart-summary th {
       background-color: #f4f4f4;
     }
-  
+
     .cart-summary caption {
       font-weight: bold;
       margin-bottom: 10px;
     }
-  
+
     /* Responsive styles */
     @media (max-width: 768px) {
       .cart-item {
@@ -135,43 +145,45 @@
         align-items: center;
         text-align: center;
       }
-  
+
       .cart-item img {
-        width: 80%; /* Adjust width as needed */
+        width: 80%;
+        /* Adjust width as needed */
         margin-bottom: 10px;
       }
-  
+
       .cart-item-info {
         margin-bottom: 10px;
       }
-  
+
       .quantity-controls {
         margin-bottom: 10px;
         display: flex;
         justify-content: center;
       }
-  
+
       .order-button {
         margin-top: 10px;
         text-align: center;
       }
-  
+
       .cart-summary {
         margin-top: 10px;
       }
-  
+
       .remove-button {
         display: block;
         margin-top: 10px;
-        color: #fff; /* White text color */
+        color: #fff;
+        /* White text color */
       }
     }
-  
+
     @media (max-width: 576px) {
       .cart-item img {
         width: 100%;
       }
-  
+
       .quantity-controls input {
         width: 40px;
       }
@@ -182,7 +194,7 @@
       display: none;
     }
   </style>
-  
+
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -205,9 +217,9 @@
             </tbody>
           </table>
         `;
-  
+
         const tbody = modelNumbersContainer.querySelector('tbody');
-  
+
         if (cartItems.length === 0) {
           cartContainer.innerHTML = '<p>Your cart is empty.</p>';
           orderButton.classList.add('hidden'); // Hide the order button
@@ -215,15 +227,15 @@
           cartItems.forEach(item => {
             const cartItemDiv = document.createElement('div');
             cartItemDiv.className = 'cart-item';
-  
+
             const imgElement = document.createElement('img');
             imgElement.src = item.imgSrc;
             imgElement.alt = item.model;
-  
+
             const infoDiv = document.createElement('div');
             infoDiv.className = 'cart-item-info';
             infoDiv.innerHTML = `<p>Model Number: ${item.model}</p>`;
-  
+
             const quantityDiv = document.createElement('div');
             quantityDiv.className = 'quantity-controls';
             quantityDiv.innerHTML = `
@@ -232,12 +244,12 @@
               <button class="quantity-increase" data-model="${item.model}">+</button>
               <button class="remove-button" data-model="${item.model}"><i class="fa fa-trash"></i></button>
             `;
-  
+
             infoDiv.appendChild(quantityDiv);
             cartItemDiv.appendChild(imgElement);
             cartItemDiv.appendChild(infoDiv);
             cartContainer.appendChild(cartItemDiv);
-  
+
             // Append to the table
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -248,30 +260,30 @@
           });
           orderButton.classList.remove('hidden'); // Show the order button
         }
-  
+
         // Attach event listeners to quantity and remove buttons
         document.querySelectorAll('.quantity-decrease').forEach(button => {
-          button.addEventListener('click', function() {
+          button.addEventListener('click', function () {
             const model = this.getAttribute('data-model');
             changeQuantity(model, -1);
           });
         });
-  
+
         document.querySelectorAll('.quantity-increase').forEach(button => {
-          button.addEventListener('click', function() {
+          button.addEventListener('click', function () {
             const model = this.getAttribute('data-model');
             changeQuantity(model, 1);
           });
         });
-  
+
         document.querySelectorAll('.remove-button').forEach(button => {
-          button.addEventListener('click', function() {
+          button.addEventListener('click', function () {
             const model = this.getAttribute('data-model');
             removeFromCart(model);
           });
         });
       };
-  
+
       window.changeQuantity = (model, change) => {
         let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
         cartItems = cartItems.map(item => {
@@ -283,14 +295,14 @@
         localStorage.setItem('cart', JSON.stringify(cartItems));
         loadCart();
       };
-  
+
       const removeFromCart = (model) => {
         let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
         cartItems = cartItems.filter(item => item.model !== model);
         localStorage.setItem('cart', JSON.stringify(cartItems));
         loadCart();
       };
-  
+
       const initializeCart = () => {
         let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
         cartItems = cartItems.map(item => {
@@ -301,10 +313,10 @@
         });
         localStorage.setItem('cart', JSON.stringify(cartItems));
       };
-  
+
       initializeCart();
       loadCart();
-  
+
       // Order button click handler
       document.querySelector('.order-button button').addEventListener('click', () => {
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -313,7 +325,7 @@
       });
     });
   </script>
-  
+
   <!-- FontAwesome for the trash icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -377,21 +389,68 @@
     </section>
   </div>
 
-  <!-- footer section starts -->
-  <footer class="footer_section">
-    <div class="container">
-      <div class="footer_logo">
-        <a href="index.html">
-          <img src="images/giftie.jpg" alt="Giftiebags Logo" class="img-fluid" style="max-width: 80px;">
-          <span>Giftiebags</span>
-        </a>
-      </div>
-      <div class="footer_info">
-        <p>&copy; 2024 Giftiebags. All Rights Reserved.</p>
+  <br>
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2-top" style="margin-left: 20px; margin-right: 20px;">
+    <div class="info_container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-6">
+            <h6>ABOUT US</h6>
+            <p>
+              Giftie Bags offers a curated selection of premium products for special occasions, including elegant gifts,
+              plates, customized items, and beautiful Jarmen gold and silver materials. Perfect for making your
+              celebrations memorable.
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <h6>CONTACT US</h6>
+            <div class="info_link-box">
+              <a href="https://maps.app.goo.gl/H4hfAr19bzM3irhd8">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span> Kumaran thirunagar, Dindigul, Tamil Nadu 624001 </span>
+              </a>
+              <div class="contact_info">
+                <a href="tel:+918248414131">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span>+91 82484 14131</span>
+                </a>
+                <a href="mailto:giftiebags@gmail.com">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>giftiebags@gmail.com</span>
+                </a>
+              </div>
+            </div>
+            <div class="social_box">
+              <a href="https://www.facebook.com/" class="social_icon">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="https://wa.me/8248414131" class="social_icon">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+              </a>
+              <a href="http://www.instagram.com/giftiebags" class="social_icon">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="social_icon">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
-  <!-- footer section ends -->
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div class="container">
+        <p>&copy; <span id="displayYear">All Rights Reserved by</span> Giftiebags</p>
+      </div>
+    </footer>
+    <!-- footer section -->
+  </section>
+
+  <!-- end info section -->
 
 </body>
 
