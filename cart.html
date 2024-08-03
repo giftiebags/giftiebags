@@ -321,7 +321,7 @@
       document.querySelector('.order-button button').addEventListener('click', () => {
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
         localStorage.setItem('orderDetails', JSON.stringify(cartItems));
-        window.location.href = 'CartOrder.html';
+        window.location.href = 'cartorder.html';
       });
     });
   </script>
