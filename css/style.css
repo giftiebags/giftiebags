@@ -741,21 +741,21 @@ textarea.form-control {
 }
 
 .button-container .btn-primary {
-  background-color: #007bff;
+  background-color: gold;
   color: white;
 }
 
 .button-container .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #a1a102;
 }
 
 .button-container .btn-secondary {
-  background-color: #6c757d;
+  background-color:#2205c9;
   color: white;
 }
 
 .button-container .btn-secondary:hover {
-  background-color: #5a6268;
+  background-color: #102C57 ;
 }
 
 .button-container .btn:active {

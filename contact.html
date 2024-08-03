@@ -11,9 +11,9 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  
+
   <!-- bootstrap core js -->
-<script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
 
   <title>
@@ -21,7 +21,8 @@
   </title>
 
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -30,7 +31,7 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
- 
+
 </head>
 
 <body>
@@ -39,20 +40,31 @@
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container">
         <a class="navbar-brand" href="index.html">
-          <img src="images/giftie.jpg" alt="Giftiebags Logo" class="img-fluid" style="max-width: 80px;">
-          <span class=" d-lg-inline" style="font-size: 26px; padding-left: 8px;">Giftiebags</span>
+          <img src="images/giftie.jpg" alt="Giftiebags Logo" class="img-fluid" style="max-width: 70px;">
+          <span class="d-lg-inline">Giftiebags</span>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-    
+
+        <!-- Cart icon and notification (for mobile view) -->
+        <div class="cart-container d-lg-none">
+          <a href="cart.html"><img src="images/cart.svg" alt="Cart Icon" class="cart-icon"></a>
+          <span id="cart-count" class="notification">0</span>
+          <div id="notification" class="notification">Item added to cart!</div>
+        </div>
+
+
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Categories
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
@@ -68,11 +80,18 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
+            <!-- Cart icon and notification (for desktop view) -->
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link" href="cart.html">
+                <img src="images/cart.svg" alt="Cart Icon" class="cart-icon">
+                <span id="cart-count" class="notification">0</span>
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
     </header>
-    
+
     <br>
     <!-- end header section -->
     <!-- slider section -->
@@ -88,77 +107,78 @@
         </div>
       </div>
     </section>
-  <br>
-  <br>
+    <br>
+    <br>
 
-  <!-- end contact section -->
+    <!-- end contact section -->
 
 
-  <!-- info section -->
+    <!-- info section -->
 
-  <section class="info_section layout_padding2-top" style="margin-left: 20px; margin-right: 20px;">
-    <div class="info_container">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-6">
-            <h6>ABOUT US</h6>
-            <p>
-              Giftie Bags offers a curated selection of premium products for special occasions, including elegant gifts,
-              plates, customized items, and beautiful Jarmen gold and silver materials. Perfect for making your
-              celebrations memorable.
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-6">
-            <h6>CONTACT US</h6>
-            <div class="info_link-box">
-              <a href="https://maps.app.goo.gl/H4hfAr19bzM3irhd8">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span> Kumaran thirunagar, Dindigul, Tamil Nadu 624001 </span>
-              </a>
-              <div class="contact_info">
-                <a href="tel:+918248414131">
-                  <i class="fa fa-phone" aria-hidden="true"></i>
-                  <span>+91 82484 14131</span>
+    <section class="info_section layout_padding2-top" style="margin-left: 20px; margin-right: 20px;">
+      <div class="info_container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-6">
+              <h6>ABOUT US</h6>
+              <p>
+                Giftie Bags offers a curated selection of premium products for special occasions, including elegant
+                gifts,
+                plates, customized items, and beautiful Jarmen gold and silver materials. Perfect for making your
+                celebrations memorable.
+              </p>
+            </div>
+            <div class="col-md-6 col-lg-6">
+              <h6>CONTACT US</h6>
+              <div class="info_link-box">
+                <a href="https://maps.app.goo.gl/H4hfAr19bzM3irhd8">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <span> Kumaran thirunagar, Dindigul, Tamil Nadu 624001 </span>
                 </a>
-                <a href="mailto:giftiebags@gmail.com">
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
-                  <span>giftiebags@gmail.com</span>
+                <div class="contact_info">
+                  <a href="tel:+918248414131">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>+91 82484 14131</span>
+                  </a>
+                  <a href="mailto:giftiebags@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>giftiebags@gmail.com</span>
+                  </a>
+                </div>
+              </div>
+              <div class="social_box">
+                <a href="https://www.facebook.com/" class="social_icon">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://wa.me/8248414131" class="social_icon">
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </a>
+                <a href="http://www.instagram.com/giftiebags" class="social_icon">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social_icon">
+                  <i class="fa fa-youtube" aria-hidden="true"></i>
                 </a>
               </div>
-            </div>
-            <div class="social_box">
-              <a href="https://www.facebook.com/" class="social_icon">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="https://wa.me/8248414131" class="social_icon">
-                <i class="fa fa-whatsapp" aria-hidden="true"></i>
-              </a>
-              <a href="http://www.instagram.com/giftiebags" class="social_icon">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="#" class="social_icon">
-                <i class="fa fa-youtube" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- footer section -->
-    <footer class="footer_section">
-      <div class="container">
-        <p>&copy; <span id="displayYear">All Rights Reserved by</span> Giftiebags</p>
-      </div>
-    </footer>
-    <!-- footer section -->
-  </section>
+      <!-- footer section -->
+      <footer class="footer_section">
+        <div class="container">
+          <p>&copy; <span id="displayYear">All Rights Reserved by</span> Giftiebags</p>
+        </div>
+      </footer>
+      <!-- footer section -->
+    </section>
 
-  <!-- end info section -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <script src="js/custom.js"></script>
+    <!-- end info section -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <script src="js/custom.js"></script>
 </body>
 
 </html>
