@@ -8,8 +8,10 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- Site Metas -->
-    <meta name="keywords" content="Giftiebags, Gifts for all occasions, Online gift shop, Fast delivery gifts, Affordable gifts, High-quality gifts, Buy gifts online, Best gift shop, Gifts for birthdays, Gifts for anniversaries, Unique gift items, Gift ideas, E-commerce gifts, Dindigul gift shop, Tamil Nadu gifts" />
-    <meta name="description" content="Giftiebags is your one-stop online gift shop offering a wide range of high-quality, affordable gifts for all occasions with fast delivery. Discover unique gift items for birthdays, anniversaries, and more." />
+    <meta name="keywords"
+        content="Giftiebags, Gifts for all occasions, Online gift shop, Fast delivery gifts, Affordable gifts, High-quality gifts, Buy gifts online, Best gift shop, Gifts for birthdays, Gifts for anniversaries, Unique gift items, Gift ideas, E-commerce gifts, Dindigul gift shop, Tamil Nadu gifts" />
+    <meta name="description"
+        content="Giftiebags is your one-stop online gift shop offering a wide range of high-quality, affordable gifts for all occasions with fast delivery. Discover unique gift items for birthdays, anniversaries, and more." />
     <meta name="author" content="Giftiebags" />
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -74,7 +76,8 @@
         @media (max-width: 768px) {
             .order-form-container {
                 padding: 15px;
-                max-width: 90%; /* Reduced width for mobile devices */
+                max-width: 90%;
+                /* Reduced width for mobile devices */
             }
 
             .order-form .form-group input {
@@ -95,7 +98,8 @@
 
         @media (max-width: 576px) {
             .order-form-container {
-                margin: 20px auto; /* Reduced margin for smaller screens */
+                margin: 20px auto;
+                /* Reduced margin for smaller screens */
             }
         }
     </style>
@@ -107,12 +111,23 @@
         <header class="header_section">
             <nav class="navbar navbar-expand-lg custom_nav-container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="images/giftie.jpg" alt="Giftiebags Logo" class="img-fluid" style="max-width: 80px;">
-                    <span class="d-lg-inline" style="font-size: 26px; padding-left: 8px;">Giftiebags</span>
+                    <img src="images/giftie.jpg" alt="Giftiebags Logo" class="img-fluid" style="max-width: 70px;">
+                    <span class="d-lg-inline">Giftiebags</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Cart icon and notification (for mobile view) -->
+                <div class="cart-container d-lg-none">
+                    <a href="cart.html"><img src="images/cart.svg" alt="Cart Icon" class="cart-icon"></a>
+                    <span id="cart-count" class="notification">0</span>
+                    <div id="notification" class="notification">Item added to cart!</div>
+                </div>
+
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
@@ -120,7 +135,8 @@
                             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Categories
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
@@ -135,6 +151,13 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <!-- Cart icon and notification (for desktop view) -->
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link" href="cart.html">
+                                <img src="images/cart.svg" alt="Cart Icon" class="cart-icon">
+                                <span id="cart-count" class="notification">0</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -184,7 +207,9 @@
                     <div class="col-md-6 col-lg-6">
                         <h6>ABOUT US</h6>
                         <p>
-                            Giftie Bags offers a curated selection of premium products for special occasions, including elegant gifts, plates, customized items, and beautiful Jarmen gold and silver materials. Perfect for making your celebrations memorable.
+                            Giftie Bags offers a curated selection of premium products for special occasions, including
+                            elegant gifts, plates, customized items, and beautiful Jarmen gold and silver materials.
+                            Perfect for making your celebrations memorable.
                         </p>
                     </div>
                     <div class="col-md-6 col-lg-6">
@@ -257,6 +282,12 @@
             });
         });
     </script>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <script src="js/custom.js"></script>
 </body>
 
 </html>

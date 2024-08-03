@@ -33,45 +33,135 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
+
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const bagsContainer = document.getElementById('gift-container');
+      const createItem = (containerId, start, end, modelPrefix, imgFolder, imgPrefix, imgSuffix) => {
+        const container = document.getElementById(containerId);
+        for (let i = start; i <= end; i++) {
+          const colDiv = document.createElement('div');
+          colDiv.className = 'col-sm-6 col-md-4 col-lg-3';
 
-      for (let i = 1; i <= 48; i++) {
-        const colDiv = document.createElement('div');
-        colDiv.className = 'col-sm-6 col-md-4 col-lg-3';
+          const boxDiv = document.createElement('div');
+          boxDiv.className = 'box';
 
-        const boxDiv = document.createElement('div');
-        boxDiv.className = 'box';
+          const aElement = document.createElement('a');
+          aElement.href = `order.html?model=${modelPrefix}${i}`;
 
-        const aElement = document.createElement('a');
-        aElement.href = `order.html?model=G${i}`;
+          const imgBoxDiv = document.createElement('div');
+          imgBoxDiv.className = 'img-box';
 
-        const imgBoxDiv = document.createElement('div');
-        imgBoxDiv.className = 'img-box';
+          const imgElement = document.createElement('img');
+          imgElement.src = `images/${imgFolder}/${imgPrefix}${i}${imgSuffix}`;
+          imgElement.alt = `${modelPrefix} ${i}`;
 
-        const imgElement = document.createElement('img');
-        imgElement.src = `images/gify items/Gift item ${i}.jpg`;
-        imgElement.alt = `Gift ${i}`;
+          const newDiv = document.createElement('div');
+          newDiv.className = 'new';
 
-        const newDiv = document.createElement('div');
-        newDiv.className = 'new';
+          const spanElement = document.createElement('span');
+          spanElement.innerHTML = `&#9733; ${modelPrefix}${i}`;
 
-        const spanElement = document.createElement('span');
-        spanElement.innerHTML = `&#9733; G${i}`;
+          const buttonContainer = document.createElement('div');
+          buttonContainer.className = 'button-container';
 
-        imgBoxDiv.appendChild(imgElement);
-        newDiv.appendChild(spanElement);
-        aElement.appendChild(imgBoxDiv);
-        aElement.appendChild(newDiv);
-        boxDiv.appendChild(aElement);
-        colDiv.appendChild(boxDiv);
-        bagsContainer.appendChild(colDiv);
-      }
+          const addToCartButton = document.createElement('button');
+          addToCartButton.className = 'btn btn-primary';
+          addToCartButton.innerHTML = 'Add to Cart';
+          addToCartButton.setAttribute('data-model', `${modelPrefix}${i}`);
+          addToCartButton.setAttribute('data-img-src', `images/${imgFolder}/${imgPrefix}${i}${imgSuffix}`);
+          addToCartButton.setAttribute('data-model-name', `${modelPrefix}${i}`);
+
+          const buyNowButton = document.createElement('button');
+          buyNowButton.className = 'btn btn-secondary';
+          buyNowButton.innerHTML = 'Buy Now';
+          buyNowButton.setAttribute('data-model', `${modelPrefix}${i}`);
+          buyNowButton.setAttribute('data-img-src', `images/${imgFolder}/${imgPrefix}${i}${imgSuffix}`);
+          buyNowButton.setAttribute('data-model-name', `${modelPrefix}${i}`);
+          buyNowButton.onclick = () => {
+            window.location.href = `order.html?model=${modelPrefix}${i}`;
+          };
+
+          buttonContainer.appendChild(addToCartButton);
+          buttonContainer.appendChild(buyNowButton);
+
+          imgBoxDiv.appendChild(imgElement);
+          newDiv.appendChild(spanElement);
+          aElement.appendChild(imgBoxDiv);
+          aElement.appendChild(newDiv);
+          boxDiv.appendChild(aElement);
+          boxDiv.appendChild(buttonContainer);
+          colDiv.appendChild(boxDiv);
+          container.appendChild(colDiv);
+        }
+      };
+      createItem('gift-container', 1, 48, 'G', 'gify items', 'Gift item ', '.jpg');
+
+      const updateCartCount = () => {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = cartItems.length;
+        document.getElementById('cart-count').textContent = cartCount;
+      };
+
+      const addToCart = (model, imgSrc, modelName) => {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const itemIndex = cartItems.findIndex(item => item.model === model);
+
+        if (itemIndex === -1) {
+          cartItems.push({ model, imgSrc, modelName });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+
+        // Show notification modal
+        $('#notificationModal').modal('show');
+
+        // Update cart count
+        updateCartCount();
+      };
+
+      document.addEventListener('DOMContentLoaded', function () {
+        updateCartCount();
+      });
+
+      document.querySelectorAll('.btn-primary').forEach(button => {
+        button.addEventListener('click', function () {
+          const model = this.getAttribute('data-model');
+          const imgSrc = this.getAttribute('data-img-src');
+          const modelName = this.getAttribute('data-model-name');
+
+          addToCart(model, imgSrc, modelName);
+        });
+      });
     });
+
   </script>
 
+
+
 </head>
+
+<!-- Notification Modal -->
+<div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="notificationModalLabel">Notification</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Item added to cart!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <body>
   <div class="hero_area">
@@ -79,13 +169,22 @@
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container">
         <a class="navbar-brand" href="index.html">
-          <img src="images/giftie.jpg" alt="Giftiebags Logo" class="img-fluid" style="max-width: 80px;">
-          <span class=" d-lg-inline" style="font-size: 26px; padding-left: 8px;">Giftiebags</span>
+          <img src="images/giftie.jpg" alt="Giftiebags Logo" class="img-fluid" style="max-width: 70px;">
+          <span class="d-lg-inline" >Giftiebags</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Cart icon and notification (for mobile view) -->
+        <div class="cart-container d-lg-none">
+          <a href="cart.html"><img src="images/cart.svg" alt="Cart Icon" class="cart-icon"></a>
+          <span id="cart-count" class="notification">0</span>
+          <div id="notification" class="notification">Item added to cart!</div>
+        </div>
+
+
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
@@ -110,10 +209,19 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
+            <!-- Cart icon and notification (for desktop view) -->
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link" href="cart.html">
+                <img src="images/cart.svg" alt="Cart Icon" class="cart-icon">
+                <span id="cart-count" class="notification">0</span>
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
     </header>
+    <br>
+
     <br>
     <!-- end header section -->
     <!-- slider section -->
@@ -138,12 +246,6 @@
         </div>
       </div>
     </section>
-
-
-
-
-
-
     <!-- end slider section -->
   </div>
   <!-- end hero area -->
@@ -158,15 +260,14 @@
           Gifts
         </h2>
       </div>
-
       <div id="gift-container" class="row"></div>
-
-
     </div>
   </section>
   <br><br>
 
   <!-- end shop section -->
+
+
 
   <!-- why section -->
 
