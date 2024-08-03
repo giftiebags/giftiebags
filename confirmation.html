@@ -1,52 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="keywords" content="Giftiebags, Order Confirmation" />
-  <meta name="description" content="Thank you for your order from Giftiebags." />
-  <meta name="author" content="Giftiebags" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Giftiebags, Order Confirmation">
+  <meta name="description" content="Thank you for your order from Giftiebags.">
+  <meta name="author" content="Giftiebags">
   <title>Order Confirmation - Giftiebags</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link href="css/style.css" rel="stylesheet" />
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <style>
-    .confirmation-container {
+    /* Popup Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 8px;
       text-align: center;
-      margin-top: 50px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      animation: modalFadeIn 0.5s;
     }
-    .confirmation-container .green-tick {
-      font-size: 50px;
-      color: green;
+
+    .green-tick {
+      font-size: 80px;
+      color: #4caf50; /* Green color */
+      animation: tickBounce 1s ease-in-out;
     }
-    .confirmation-container h2 {
+
+    .modal-content h2 {
       margin-top: 20px;
       font-size: 24px;
       font-weight: bold;
+      color: #333;
     }
-    .confirmation-container p {
+
+    .modal-content p {
       margin-top: 10px;
       font-size: 18px;
+      color: #666;
+    }
+
+    /* Animation for the tick mark */
+    @keyframes tickBounce {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Animation for the modal */
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="hero_area">
-    <section class="confirmation_section layout_padding">
-      <div class="container confirmation-container">
-        <div class="green-tick">✔️</div>
-        <h2>Your order has been confirmed</h2>
-        <p>Thanks for shopping with Giftiebags!</p>
-      </div>
-    </section>
+  <!-- Modal -->
+  <div id="orderConfirmationModal" class="modal">
+    <div class="modal-content">
+      <!-- Use a Unicode character for the tick mark with the green-tick class -->
+      <div class="green-tick">&#10004;</div> <!-- Unicode for tick mark -->
+      <h2>Your order has been placed successfully</h2>
+      <p>Thanks for shopping with Giftiebags!</p>
+    </div>
   </div>
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/custom.js"></script>
+  <script>
+    // JavaScript to show the modal
+    window.onload = function () {
+      var modal = document.getElementById("orderConfirmationModal");
+      modal.style.display = "block";
+    };
+
+    // You can add additional JavaScript to close the modal if needed
+  </script>
 </body>
 
 </html>
